@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        
+        <title>Dashboard Mars</title>
+        
+        <meta name="title" content="Dashboard" />
+        <meta name="description" content="Mars, Dashboard" />
+        <meta name="keywords" content="Mars, Dashboard" />
+        
+        <meta name="og:image" content=""/>
+    
+        
+        <!-- stylesheet icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!-- stylesheet reset -->
+		<link href="css/reset.css" type="text/css" rel="stylesheet" media="screen">
+        
+        <!-- stylesheet mobile-->
+		<link href="css/mob.css" type="text/css" rel="stylesheet" media="screen">
+        <!-- stylesheet mid screen-->
+		<link href="css/mid.css" type="text/css" rel="stylesheet" media="screen">
+        <!-- stylesheet large screen-->
+		<link href="css/large.css" type="text/css" rel="stylesheet" media="screen">
+        <!-- stylesheet XL screens-->
+		<link href="css/xl.css" type="text/css" rel="stylesheet" media="screen">
+        
+        <link rel='stylesheet prefetch' href='https://rawgit.com/AllThingsSmitty/e42d5dbd4f548b2a4ddbf442627a897f/raw/7bff268eb57a48dee44f23ffd14b4ea146db162b/flexbox-center-container.css'>
+        <link rel='stylesheet prefetch' href='https://rawgit.com/AllThingsSmitty/8fb1b38c77ddd4357287f242f07c7797/raw/80da7234eaa5a4bb7e27c06c41dd0717ff4f1c93/system-fonts.css'>
+	</head>
+    <body>
+        <div id="content" class="grid-container">
+            <div class="grid-item title">
+                <h1>Interplanetary Transport System Interface <i>(ITSI)</i></h1>
+            </div>
+            <!--<div class="grid-item info">
+                <h3>Voertuig informatie</h3>
+                
+                <div id="gauge-info">
+                    <div class="wrapper">
+                      <div class="box">
+                        <h4>Brandstof</h4>
+                        <div id="g1" class="gauge"></div>
+                      </div>
+                      <div class="box">
+                        <h4>Snelheid</h4>
+                        <h4>Acceleratie</h4>
+                        <h4>G-force</h4>
+                        <h4>Brandstof</h4>
+                        <div id="g2" class="gauge"></div>
+                      </div>
+                      <div class="box">
+                          <h4>Brandstof</h4>
+                        <div id="g3" class="gauge"></div>
+                      </div>
+                      <div class="box">
+                          <h4>Brandstof</h4>
+                        <div id="g4" class="gauge"></div>
+                      </div>
+                    </div>
+                    <div class="container">
+                        <button type="button" id="gauge_refresh">Actuele meterstanden</button>
+                    </div>
+                </div>
+            </div>-->
+            <div class="grid-item welcome">   
+                <h2>Welkom bij je persoonlijke dashboard <i>Peter Post</i></h2>
+            </div>
+            <div class="grid-item distance">   
+                <h3>Afstand afgelegd over tijd</h3>
+                <h4>Afstand tot eindbestemming in aardse dagen</h4>
+                <object type="image/svg+xml" data="distance-time.svg" id="distance-animation" ><img src="distance-time.svg" alt="distance-animation"></object>
+            </div>
+            <div class="grid-item stock">
+                <h3>Voorraad</h3> 
+                <h4>Watervoorraad</h4>
+                <object type="image/svg+xml" data="water.svg" id="water-animation" ><img src="water.svg" alt="water-animation"></object>
+            </div>
+            <div class="grid-item countdown">
+                <h3>Resterende vliegtijd naar Mars</h3>
+                <div class="container">
+                  <ul>
+                    <li><span id="days"></span>Dagen</li>
+                    <li><span id="hours"></span>Uren</li>
+                    <li><span id="minutes"></span>Minuten</li>
+                    <li><span id="seconds"></span>Seconden</li>
+                  </ul>
+                </div>
+            </div>
+
+            <!--
+            <div class="grid-item dash">
+                <h3>Dashboard</h3><h4>Dashboard</h4><h5>Dashboard</h5>
+                <h6>Dashboard</h6>
+            </div>-->
+        </div>
+        <footer>
+            
+        </footer>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script src="js/raphael-2.1.4.min.js"></script>
+        <script src="js/justgage.js"></script><!--
+        <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+          var g1 = new JustGage({
+            id: 'g1',
+            value: 65,
+            min: 0,
+            max: 100,
+            symbol: '%',
+            pointer: true,
+            gaugeWidthScale: 0.6,
+            customSectors: [{
+              color: '#ff0000',
+              lo: 50,
+              hi: 100
+            }, {
+              color: '#00ff00',
+              lo: 0,
+              hi: 50
+            }],
+            counter: true
+          });
+
+          var g2 = new JustGage({
+            id: 'g2',
+            value: 45,
+            min: 0,
+            max: 100,
+            symbol: '%',
+            pointer: true,
+            pointerOptions: {
+              toplength: -15,
+              bottomlength: 10,
+              bottomwidth: 12,
+              color: '#8e8e93',
+              stroke: '#ffffff',
+              stroke_width: 3,
+              stroke_linecap: 'round'
+            },
+            gaugeWidthScale: 0.6,
+            counter: true
+          });
+
+          var g3 = new JustGage({
+            id: 'g3',
+            value: 40,
+            min: 0,
+            max: 100,
+            symbol: '%',
+            donut: true,
+            pointer: true,
+            gaugeWidthScale: 0.4,
+            pointerOptions: {
+              toplength: 10,
+              bottomlength: 10,
+              bottomwidth: 8,
+              color: '#000'
+            },
+            customSectors: [{
+              color: "#ff0000",
+              lo: 50,
+              hi: 100
+            }, {
+              color: "#00ff00",
+              lo: 0,
+              hi: 50
+            }],
+            counter: true
+          });
+
+          var g4 = new JustGage({
+            id: 'g4',
+            value: 70,
+            min: 0,
+            max: 100,
+            symbol: '%',
+            pointer: true,
+            pointerOptions: {
+              toplength: 8,
+              bottomlength: -20,
+              bottomwidth: 6,
+              color: '#8e8e93'
+            },
+            gaugeWidthScale: 0.1,
+            counter: true
+          });
+
+          document.getElementById('gauge_refresh').addEventListener('click', function() {
+            g1.refresh(getRandomInt(0, 100));
+            g2.refresh(getRandomInt(0, 100));
+            g3.refresh(getRandomInt(0, 100));
+            g4.refresh(getRandomInt(0, 100));
+          });
+        });
+    </script>-->
+    </body>
+</html>

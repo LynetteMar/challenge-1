@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
+
+
+body{
+    background: url("../img/starry.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    font-size: 30px;
+}
+
+h1 i{
+    font-style: italic;
+}
+
+
+h2{
+    font-family: 'Muli', sans-serif;
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h2 i{
+    font-style: italic;
+}
+
+h3{
+    font-family: 'Muli', sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 10px;
+}
+
+h4{
+    font-family: 'Muli', sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    font-style: italic;
+}
+
+h6{
+    font-family: 'Muli', sans-serif;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-transform: uppercase
+}
+
+p{
+    font-family: 'Muli', sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+button{
+    margin: 30px 5px 0 2px;
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 900;
+    border: none;
+    background: #E5C7EB;
+    color: black;
+    cursor: pointer;
+    font-family: 'Muli', sans-serif;
+}
+
+button:hover, button:focus{
+    background: #5E5375;
+    color: white;
+}
+
+.grid-container /*body*/{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    grid-gap: 0px;
+    
+    grid-template-areas: 
+        "title"
+        "wel"
+        "count"
+        /*"dash"*/
+        /*"info"*/
+        "dis"
+        "stock";
+}
+
+/*GRID AREAS*/
+
+.title{
+    grid-area: title;
+} 
+
+.dash{
+    padding-top: 40px;
+    grid-area: dash;
+}
+
+
+.info{
+    grid-area: info;
+}
+
+.distance{
+    grid-area: dis;
+}
+
+.stock{
+    grid-area: stock;
+    text-align: center;
+}
+
+.stock h3, .stock h4{
+    text-align: left;
+}
+
+.countdown{
+    grid-area: count;
+}
+
+.welcome{
+    grid-area: wel;
+    background: black;
+    border: 15px solid #875985;
+}
+
+.welcome h2{
+    color: white;
+    text-decoration: underline;
+}
+
+.stock, .distance, .countdown{
+    background: rgba(0,0,0,0.5);
+    border: 15px solid #875985;
+}
+/*GRID AREAS*/
+
+/*INFO*/
+.wrapper {
+    background: rgba(255,255,255,0.3);
+    display: flex;
+    flex-flow: column; /*in de container*/
+    align-items: center;
+}
+
+.box {
+    border: 5px solid white;
+    width: 250px;
+    display: flex;
+    align-items: center; /*titel en gauge naast elkaar in de box*/
+    flex-flow: column;
+    margin: 20px;
+}
+
+.gauge /*size gauge*/ { 
+    height: 200px;
+    width: 200px;
+}
+/*
+.container {
+    text-align: center;
+}*/
+/*INFO*/
+
+/*Omgeving*/
+
+
+
+/*Omgeving*/
+
+/*countdown*/
+
+.container {
+  color: #333;
+  text-align: center;
+}
+
+li {
+    font-family: 'Allerta Stencil', sans-serif;
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+    color: white;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+/*countdown*/
+
+#water-animation{
+    width: 200px;
+}
+
+footer{
+    grid-area: foot;
+}
+
+.grid-item{
+    padding: 20px;
+}
+
+body{
+    background-color: black;
+}

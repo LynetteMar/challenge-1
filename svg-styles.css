@@ -1,0 +1,124 @@
+/*normal - The animation is played as normal (forwards). This is default
+reverse - The animation is played in reverse direction (backwards)
+alternate - The animation is played forwards first, then backwards
+alternate-reverse - The animation is played backwards first, then forwards*/
+
+/*ease - Specifies an animation with a slow start, then fast, then end slowly (this is default)
+linear - Specifies an animation with the same speed from start to end
+ease-in - Specifies an animation with a slow start
+ease-out - Specifies an animation with a slow end
+ease-in-out - Specifies an animation with a slow start and end
+cubic-bezier(n,n,n,n) - Lets you define your own values in a cubic-bezier function*/
+
+<?xml-stylesheet type="text/css" href="svg-styles.css"?>
+
+/*BARS*/
+#miles-getallen{
+    animation: appear 3s linear forwards;
+}
+
+#km-getallen{
+    fill: white;
+}
+
+#km-line, #km-getallen{
+    animation: apfirst 15s linear forwards;
+}
+
+#miles-bars{
+    animation: apfirst 10s linear forwards;
+}
+
+#chart-title{
+}
+
+#legend{   
+     animation: shake .2s linear infinite;
+}
+
+#10-80-distance{
+    animation: kaboom 5s ease alternate infinite;
+}
+
+#border-graph{
+    animation: appear 10s linear forwards;
+}
+
+#vert-bars{
+    animation: appear 10s linear forwards;
+}
+
+#hor-bar{
+   animation: appear 10s linear forwards; 
+}
+
+/*CIRCLE*/
+
+#curr-per{
+    animation: appear 5s linear forwards; 
+}
+
+#curr{
+    animation: appear 5s linear forwards; 
+}
+
+#used-per{
+   animation: appear-now 7s linear forwards;  
+}
+
+#used{
+    animation: appear-now 7s linear forwards; 
+}
+
+/*Keyframes*/
+
+@keyframes apfirst {
+    0% {
+    fill-opacity: 0;
+  }
+    30% {
+    fill-opacity: 1;
+    }
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes appear {
+    0% {
+    fill-opacity: 0;
+  }
+      30% {
+    fill-opacity: 0;
+  }
+    
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes apptrans {
+    0% {
+    fill-opacity: 0;
+  }
+      30% {
+    fill-opacity: 0;
+  }
+    
+  100% {
+    fill-opacity: 0.5;
+  }
+}
+
+
+@keyframes appear-now{
+    0% {
+    fill-opacity: 0;
+  }
+    80% {
+    fill-opacity: 0;
+  }
+    100% {
+    fill-opacity: 1;
+  }
+)
